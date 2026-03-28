@@ -59,7 +59,7 @@ const OurFeatures = () => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-20 relative overflow-hidden  transition-colors duration-500">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full bg-[radial-gradient(circle,#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(circle,#1e293b_1px,transparent_1px)] [background-size:32px_32px]" />
@@ -67,18 +67,18 @@ const OurFeatures = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="text-center mb-20 sm:mb-32">
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             className="text-blue-600 dark:text-blue-400 font-bold tracking-[0.3em] text-xs mb-3"
           >
             SYSTEM DESIGN
           </motion.p>
           <motion.h2
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-black "
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black "
           >
             System{" "}
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -89,95 +89,86 @@ const OurFeatures = () => {
 
         {/* Timeline Container */}
         <div className="relative">
-          {/* Main Line */}
-          <div className="absolute left-4 sm:left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-slate-200 dark:bg-slate-800" />
+          {/* Central Vertical Line */}
+          <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-slate-200 dark:bg-slate-800" />
 
-          {/* ANIMATION: Moving Data Packets (Vertical) */}
+          {/* Vertical Moving Packets */}
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
-              animate={{
-                top: ["0%", "100%"],
-                opacity: [0, 1, 0],
-              }}
+              animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
                 delay: i * 1.5,
                 ease: "linear",
               }}
-              className="absolute left-[15px] sm:left-[23px] md:left-1/2 md:-translate-x-1/2 w-1.5 h-16 bg-gradient-to-b from-transparent via-blue-500 to-transparent z-10"
+              className="absolute left-[21px] sm:left-[21px] md:left-1/2 md:-translate-x-1/2 w-1.5 h-16 bg-gradient-to-b from-transparent via-blue-500 to-transparent z-10"
             />
           ))}
 
-          <div className="space-y-16 sm:space-y-24">
+          <div className="space-y-24 md:space-y-32">
             {features.map((f, i) => {
               const isEven = i % 2 === 0;
 
               return (
                 <div
                   key={f.id}
-                  className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${
-                    isEven ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className="relative flex items-center justify-center min-h-[150px]"
                 >
-                  {/* ANIMATION: Horizontal Branch Light (Left/Right) */}
-                  <motion.div
-                    initial={{ width: 0, opacity: 0 }}
-                    whileInView={{ width: "4%", opacity: 1 }}
-                    className={`hidden md:block absolute top-1/2 h-[1px] bg-gradient-to-r ${f.color} z-10 ${isEven ? "left-[46%]" : "right-[46%]"}`}
-                  />
-
-                  {/* Card Section */}
+                  {/* FEATURE CARD: Positions based on even/odd */}
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="w-full md:w-[42%]"
+                    viewport={{ once: true }}
+                    className={`absolute w-[80%] md:w-[40%] ${isEven ? "left-16 md:left-0" : "left-16 md:left-auto md:right-0"}`}
                   >
+                    {/* Horizontal Connector Line (Desktop Only) */}
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "2rem" }}
+                      className={`hidden md:block absolute top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r ${f.color} ${isEven ? "-right-8" : "-left-8"}`}
+                    />
+
                     <motion.div
                       whileHover={{ y: -5 }}
-                      className="group p-6 sm:p-8 rounded-3xl  backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:border-blue-500/30 transition-all duration-300 shadow-lg"
+                      className="group p-6 sm:p-8 rounded-3xl  backdrop-blur-xl border border-slate-200 dark:border-slate-800 hover:shadow-2xl transition-all duration-300 shadow-lg"
                     >
-                      <h3 className="text-xl sm:text-2xl font-bold e mb-3">
-                        {f.title}
-                      </h3>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                      <h3 className="text-xl font-bold  mb-2">{f.title}</h3>
+                      <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
                         {f.desc}
                       </p>
                       <button
                         onClick={() => setSelected(f)}
-                        className="text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+                        className={`text-[10px] font-black uppercase tracking-widest bg-gradient-to-r ${f.color} bg-clip-text text-transparent`}
                       >
-                        Learn More →
+                        Technical Details →
                       </button>
                     </motion.div>
                   </motion.div>
 
-                  {/* Icon Section */}
-                  <div className="absolute left-4 sm:left-6 md:left-1/2 md:-translate-x-1/2 z-20">
+                  {/* CENTRAL ICON BOX */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 md:w-16 md:h-16 z-20">
                     <motion.div
                       initial={{ scale: 0, rotate: -45 }}
                       whileInView={{ scale: 1, rotate: 0 }}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
                       viewport={{ once: true }}
-                      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center text-white shadow-xl relative group`}
+                      className={`w-full h-full rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center text-white shadow-xl relative overflow-visible`}
                     >
-                      {/* Inner Glow Pulse */}
+                      {/* Glow Pulse Effect */}
                       <motion.div
                         animate={{
-                          scale: [1, 1.2, 1],
+                          scale: [1, 1.3, 1],
                           opacity: [0.2, 0.5, 0.2],
                         }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-0 rounded-2xl bg-white blur-md"
+                        className="absolute inset-0 rounded-2xl bg-white blur-lg z-0"
                       />
-                      <span className="relative z-10 text-2xl">{f.icon}</span>
+                      <span className="relative z-10 text-xl md:text-2xl">
+                        {f.icon}
+                      </span>
                     </motion.div>
                   </div>
-
-                  <div className="hidden md:block w-[42%]" />
                 </div>
               );
             })}
@@ -188,45 +179,55 @@ const OurFeatures = () => {
       {/* Modal */}
       <AnimatePresence>
         {selected && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+            {/* Backdrop */}
             <motion.div
-              className="absolute inset-0  backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelected(null)}
+              className="absolute inset-0 bg-slate-300/60 backdrop-blur-sm"
             />
 
+            {/* Modal Card */}
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 20 }}
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 20 }}
-              className="relative w-full max-w-lg  rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200 dark:border-slate-800"
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              
+              className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto 0 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-800 custom-scrollbar"
             >
+              {/* Close Button  */}
               <button
                 onClick={() => setSelected(null)}
-                className="absolute top-6 right-6  hover:text-red-500 transition-colors"
+                className="absolute top-4 right-4 sm:top-8 sm:right-8 text-slate-400 hover:text-red-500 transition-colors z-10"
               >
-                <HiXMark size={24} />
+                <HiXMark size={28} />
               </button>
 
+              {/* Icon  */}
               <div
-                className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${selected.color} flex items-center justify-center  text-4xl mb-8 shadow-2xl`}
+                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${selected.color} flex items-center justify-center text-white text-2xl sm:text-3xl mb-6 sm:mb-8 shadow-2xl`}
               >
                 {selected.icon}
               </div>
 
-              <h3 className="text-3xl font-black   mb-4 tracking-tight">
+              {/* Title  */}
+              <h3 className="text-2xl sm:text-3xl font-black  mb-3 sm:mb-4 leading-tight">
                 {selected.title}
               </h3>
 
-              <p className=" text-lg leading-relaxed mb-8">{selected.desc}</p>
+              {/* Description  */}
+              <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
+                {selected.desc}
+              </p>
 
+              {/* Action Button */}
               <button
                 onClick={() => setSelected(null)}
-                className={`w-full py-4 rounded-xl bg-gradient-to-r ${selected.color} text-white font-black uppercase tracking-widest text-sm shadow-lg hover:brightness-110 transition-all`}
+                className={`w-full py-3 sm:py-4 rounded-xl bg-gradient-to-r ${selected.color} text-white font-bold tracking-widest hover:brightness-110 transition-all shadow-lg text-sm sm:text-base`}
               >
-                Return to Pipeline
+                Close Analysis
               </button>
             </motion.div>
           </div>
