@@ -77,9 +77,11 @@ const Footer = () => {
                   123 Tech Avenue, <br /> Dhaka, Bangladesh
                 </span>
               </div>
-              <div className="flex items-center gap-3 hover:text-primary transition-colors cursor-pointer group">
+              <div className="flex items-center flex-nowrap gap-3 hover:text-primary transition-colors cursor-pointer group">
                 <FiPhone className="text-primary shrink-0 group-hover:rotate-12 transition-transform" />
-                <span>+880 1234 567890</span>
+                <span className="whitespace-nowrap tabular-nums">
+                  +880 1234 567890
+                </span>
               </div>
               <div className="flex items-center gap-3 hover:text-primary transition-colors cursor-pointer group">
                 <FiMail className="text-primary shrink-0 group-hover:scale-110 transition-transform" />
