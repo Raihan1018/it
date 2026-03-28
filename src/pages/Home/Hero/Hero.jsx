@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { HiOutlineShieldCheck, HiArrowRight } from "react-icons/hi2";
-import HeroImage from "../../../assets/HeroImage.png";
+// import HeroImage from "../../../assets/HeroImage.png";
 import { FaProjectDiagram } from "react-icons/fa";
 import { Link } from "react-router";
+// import Test from "../Test/Test";
+import HeroAnimation from "../../../Animation/CustomAnimation/HeroAnimation.jsx";
 
 const Hero = () => {
   return (
@@ -45,7 +47,7 @@ const Hero = () => {
           </Link>
 
           <Link
-            to={'/projects'}
+            to={"/projects"}
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/25 transition-all cursor-pointer"
           >
             View Solutions <FaProjectDiagram />
@@ -63,13 +65,14 @@ const Hero = () => {
         {/* Animated Glow behind the image */}
         <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-500/20 blur-[80px] rounded-full animate-pulse"></div>
 
-        <motion.img
+        <HeroAnimation />
+        {/* <motion.img
           src={HeroImage}
           alt="Secure Data Illustration"
           animate={{ y: [0, -20, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           className="relative z-10 w-full max-w-[320px] sm:max-w-[450px] lg:max-w-full drop-shadow-2xl"
-        />
+        /> */}
       </motion.div>
     </section>
   );
