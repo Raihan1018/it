@@ -10,17 +10,14 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  // THEME STATE: Initialize from localStorage or system preference
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
-  );
+  () => localStorage.getItem("theme") || "dark"
+);
 
-  // Apply theme to HTML tag whenever it changes
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
+useEffect(() => {
+  localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme", theme);
+}, [theme]);
 
   const handleThemeToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
