@@ -186,7 +186,7 @@ const OurFeatures = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelected(null)}
-              className="absolute inset-0 bg-slate-300/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/40 dark:bg-black/70 backdrop-blur-md"
             />
 
             {/* Modal Card */}
@@ -194,38 +194,61 @@ const OurFeatures = () => {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              
-              className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto 0 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-800 custom-scrollbar"
+              className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto 
+        rounded-[2rem] sm:rounded-[2.5rem] 
+        p-6 sm:p-8 md:p-12 
+        shadow-2xl 
+        border border-slate-200/60 dark:border-white/10
+        bg-white/80 dark:bg-slate-900/80 
+        backdrop-blur-xl custom-scrollbar"
             >
-              {/* Close Button  */}
+              {/* Close Button */}
               <button
                 onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 sm:top-8 sm:right-8 text-slate-400 hover:text-red-500 transition-colors z-10"
+                className="absolute top-4 right-4 sm:top-8 sm:right-8 
+          text-slate-500 dark:text-slate-400 
+          hover:text-red-500 transition-colors z-10"
               >
                 <HiXMark size={28} />
               </button>
 
-              {/* Icon  */}
+              {/* Icon */}
               <div
-                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${selected.color} flex items-center justify-center text-white text-2xl sm:text-3xl mb-6 sm:mb-8 shadow-2xl`}
+                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl 
+          bg-gradient-to-br ${selected.color} 
+          flex items-center justify-center 
+          text-white text-2xl sm:text-3xl 
+          mb-6 sm:mb-8 shadow-xl`}
               >
                 {selected.icon}
               </div>
 
-              {/* Title  */}
-              <h3 className="text-2xl sm:text-3xl font-black  mb-3 sm:mb-4 leading-tight">
+              {/* Title */}
+              <h3
+                className="text-2xl sm:text-3xl font-black 
+        text-slate-800 dark:text-white 
+        mb-3 sm:mb-4 leading-tight"
+              >
                 {selected.title}
               </h3>
 
-              {/* Description  */}
-              <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
+              {/* Description */}
+              <p
+                className="text-slate-600 dark:text-slate-400 
+        text-base sm:text-lg 
+        mb-8 sm:mb-10 leading-relaxed"
+              >
                 {selected.desc}
               </p>
 
               {/* Action Button */}
               <button
                 onClick={() => setSelected(null)}
-                className={`w-full py-3 sm:py-4 rounded-xl bg-gradient-to-r ${selected.color} text-white font-bold tracking-widest hover:brightness-110 transition-all shadow-lg text-sm sm:text-base`}
+                className={`w-full py-3 sm:py-4 rounded-xl 
+          bg-gradient-to-r ${selected.color} 
+          text-white font-bold tracking-widest 
+          hover:brightness-110 active:scale-[0.98]
+          transition-all shadow-lg text-sm sm:text-base`}
               >
                 Close Analysis
               </button>

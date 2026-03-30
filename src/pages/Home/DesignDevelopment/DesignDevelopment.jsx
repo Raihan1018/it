@@ -8,7 +8,8 @@ import {
   HiOutlineGlobeAlt,
 } from "react-icons/hi2";
 import { FaLaravel, FaReact } from "react-icons/fa";
-import DesignDevAnimation from "../Test/DesignDevAnimation";
+import DesignDevAnimation from "../../../Animation/CustomAnimation/DesignDevAnimation";
+// import DesignDevAnimation from "../Test/DesignDevAnimation";
 
 const services = [
   {
@@ -102,8 +103,6 @@ const DesignDevelopment = () => {
               </motion.div>
             ))}
           </div>
-
-          
         </div>
       </div>
     </section>
