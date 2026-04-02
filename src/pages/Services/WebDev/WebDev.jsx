@@ -25,6 +25,7 @@ const WebServiceCard = ({ title, description, iconPath, tags }) => {
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className="group relative bg-white dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200/60 dark:border-slate-800 shadow-xl shadow-slate-200/30 dark:shadow-none backdrop-blur-sm transition-all hover:shadow-2xl overflow-hidden"
     >
+      <title>Services | Web</title>
       {/* Animated Background Gradient */}
       <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500" />
 

@@ -48,6 +48,7 @@ const Projects = () => {
 
   return (
     <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-20 ">
+      <title>Projects</title>
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">

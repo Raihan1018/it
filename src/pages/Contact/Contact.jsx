@@ -20,6 +20,7 @@ const Contact = () => {
 
   return (
     <section className="py-24 lg:py-32 px-4 sm:px-10 lg:px-20  relative overflow-hidden">
+      <title>Contact</title>
       {/* Decorative Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]" />
@@ -47,9 +48,7 @@ const Contact = () => {
                 <HiOutlineEnvelope size={24} />
               </div>
               <div>
-                <h4 className="font-bold ">
-                  Email Us
-                </h4>
+                <h4 className="font-bold ">Email Us</h4>
                 <p className="text-slate-500 text-sm">hello@domain.com</p>
               </div>
             </div>
@@ -59,12 +58,8 @@ const Contact = () => {
                 <HiOutlineBugAnt size={24} />
               </div>
               <div>
-                <h4 className="font-bold ">
-                  Report an Issue
-                </h4>
-                <p className="text-slate-500 text-sm">
-                  report@domain.com
-                </p>
+                <h4 className="font-bold ">Report an Issue</h4>
+                <p className="text-slate-500 text-sm">report@domain.com</p>
               </div>
             </div>
           </div>
@@ -86,9 +81,7 @@ const Contact = () => {
               <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-6 shadow-lg shadow-green-500/30">
                 <HiOutlineRocketLaunch size={40} />
               </div>
-              <h3 className="text-2xl font-bold ">
-                Message Transmitted!
-              </h3>
+              <h3 className="text-2xl font-bold ">Message Transmitted!</h3>
               <p className="text-slate-500 mt-2">
                 Our QA team will review your brief within 24 hours.
               </p>

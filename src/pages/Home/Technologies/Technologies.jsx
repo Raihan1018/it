@@ -46,7 +46,7 @@ const Technologies = () => {
   return (
     <section className="py-24 px-4 bg-slate-50 dark:bg-[#0b1120] transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* --- PART 1: PRE-DISTRIBUTED SOLAR SYSTEM --- */}
+        
         <div className="relative h-[500px] md:h-[650px] flex items-center justify-center mb-20">
           {/* Ambient Background Glows */}
           <div className="absolute w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
@@ -71,12 +71,12 @@ const Technologies = () => {
             />
           </motion.div>
 
-          {/* Orbiting Icons with Randomized Start Positions */}
+         
           {techData.map((tech, i) => {
             const orbitSize = 180 + i * 38; // Even spacing
             const duration = 25 + i * 2; // Varying speeds
             const reverse = i % 2 === 0 ? 1 : -1;
-            // This is the magic: start each icon at a different degree (360 / total icons * index)
+            
             const startAngle = (360 / techData.length) * i;
 
             return (

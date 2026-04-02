@@ -63,6 +63,7 @@ const testSuites = [
 const Testing = () => {
   return (
     <section className="py-24 px-4 sm:px-10 lg:px-20 ">
+      <title>Service | Testing</title>
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-20 gap-10">

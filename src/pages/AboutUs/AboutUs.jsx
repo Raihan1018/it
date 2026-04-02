@@ -33,6 +33,7 @@ const values = [
 const About = () => {
   return (
     <section className="py-20 lg:py-32 px-4 sm:px-6 lg:px-20  overflow-hidden">
+      <title>About Us</title>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* LEFT SIDE: Visual Content */}

@@ -10,6 +10,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 sm:px-12 lg:px-24 py-12 overflow-hidden  transition-colors duration-500">
       {/* Background Decorative Element */}
+      <title>Home</title>
       <div className="absolute top-0 right-0 -z-0 w-72 h-72 bg-blue-400/10 dark:bg-blue-600/10 blur-[120px] rounded-full" />
 
       {/* 1. Text Content Container */}
