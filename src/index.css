@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playwrite+IE:wght@100..400&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui";
@@ -9,6 +9,30 @@
   font-style: normal;
 }
 
-* {
+.playwrite {
+  font-family: "Playwrite IE", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.jetbrains {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+
+/* .inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+.logo {
+  font-family: "Playwrite IE", cursive;
+}
+
+body {
   font-family: "Inter", sans-serif;
 }
