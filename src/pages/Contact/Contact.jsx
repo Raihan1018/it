@@ -86,7 +86,7 @@ const Contact = () => {
               <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-6 shadow-lg shadow-green-500/30">
                 <HiOutlineRocketLaunch size={40} />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="text-2xl font-bold ">
                 Message Transmitted!
               </h3>
               <p className="text-slate-500 mt-2">
