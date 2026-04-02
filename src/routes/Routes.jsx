@@ -44,8 +44,8 @@ export const routes = createBrowserRouter([
         Component: WebDev,
       },
       {
-        path: "services/ai",
-        Component: () => <div>AIPage</div>, // Fixed Component syntax
+        path: "services/testing",
+        Component: () => <div>testing</div>, // Fixed Component syntax
       },
     ],
   },
