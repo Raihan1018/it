@@ -6,7 +6,7 @@ import Services from "../pages/Services/Services";
 import Projects from "../pages/Projects/Projects";
 import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-
+import WebDev from "../pages/Services/WebDev/WebDev";
 
 export const routes = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "services/web-dev",
-        Component: () => <div>WebDevPage</div>, // Fixed Component syntax
+        Component: WebDev,
       },
       {
         path: "services/ai",
