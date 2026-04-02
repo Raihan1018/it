@@ -6,6 +6,7 @@ import {
   HiOutlineShieldCheck,
   HiOutlineUserGroup,
 } from "react-icons/hi2";
+import OurTeam from "./OurTeam/OurTeam";
 
 const stats = [
   { label: "Years Experience", value: "8+" },
@@ -117,9 +118,7 @@ const About = () => {
                   >
                     {v.icon}
                   </div>
-                  <h4 className="font-bold  mb-2">
-                    {v.title}
-                  </h4>
+                  <h4 className="font-bold  mb-2">{v.title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                     {v.desc}
                   </p>
@@ -131,9 +130,7 @@ const About = () => {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 py-8 border-t border-slate-200 dark:border-slate-800">
               {stats.map((s, i) => (
                 <div key={i}>
-                  <p className="text-3xl font-black  mb-1">
-                    {s.value}
-                  </p>
+                  <p className="text-3xl font-black  mb-1">{s.value}</p>
                   <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500">
                     {s.label}
                   </p>
@@ -142,10 +139,10 @@ const About = () => {
             </div>
           </div>
         </div>
+        <OurTeam />
       </div>
     </section>
   );
 };
 
 export default About;
-

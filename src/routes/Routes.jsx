@@ -7,6 +7,7 @@ import Projects from "../pages/Projects/Projects";
 import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import WebDev from "../pages/Services/WebDev/WebDev";
+import Testing from "../pages/Services/Testing/Testing";
 
 export const routes = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "services/testing",
-        Component: () => <div>testing</div>, // Fixed Component syntax
+        Component: Testing,
       },
     ],
   },

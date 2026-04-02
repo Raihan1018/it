@@ -5,7 +5,7 @@ import DesignDevelopment from "../DesignDevelopment/DesignDevelopment";
 import OurFeatures from "../OurFeatures/OurFeatures";
 import Technologies from "../Technologies/Technologies";
 import WhyUs from "../WhyUs/WhyUs";
-import OurClient from "../OurClient/OurClient";
+// import OurClient from "../OurClient/OurClient";
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
       <OurFeatures />
       <Technologies />
       <WhyUs/>
-      <OurClient/>
+      {/* <OurClient/> */}
     </div>
   );
 };
