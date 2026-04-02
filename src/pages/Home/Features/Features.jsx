@@ -60,21 +60,18 @@ const Features = () => {
               {/* Main Card Body */}
               <div
                 className="relative h-full p-8 rounded-[2.45rem] transition-colors duration-500
-                /* Light Mode */
-                bg-white/90 backdrop-blur-xl
-                /* Dark Mode */
-                dark:bg-slate-900/90 dark:group-hover:bg-slate-950/90"
+                "
               >
                 {/* Floating Icon Container */}
                 <div
-                  className={`w-16 h-16 mb-8 rounded-2xl flex items-center justify-center text-3xl text-white shadow-lg
+                  className={`w-16 h-16 mb-8 rounded-2xl flex items-center justify-center text-3xl  shadow-lg
                   bg-gradient-to-br ${step.color} ${step.shadow}
                   transform group-hover:rotate-12 transition-transform duration-500`}
                 >
                   {step.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300">
+                <h3 className="text-2xl  font-bold mb-4 bg-clip-text ">
                   {step.title}
                 </h3>
 

@@ -41,27 +41,42 @@ const Footer = () => {
         </div>
 
         {/* COLUMN 3: SUPPORT */}
-        <div>
+        {/* COLUMN 3: MAP / LOCATION */}
+        <div className="flex flex-col">
           <h4 className="text-base-content font-bold mb-8 uppercase text-[11px] tracking-[0.2em]">
-            Support
+            Find Us
           </h4>
-          <ul className="space-y-4 text-sm font-medium">
-            {[
-              "Help Center / FAQ",
-              "Privacy Policy",
-              "Terms of Service",
-              "Contact Support",
-            ].map((text, i) => (
-              <li key={i}>
-                <NavLink
-                  to={`/${text.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="hover:text-primary transition-all duration-300"
-                >
-                  {text}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+          <div className="group relative w-full h-32 rounded-xl overflow-hidden border border-base-200 bg-base-200/30 transition-all duration-500 hover:border-primary/30">
+            {/* Map Overlay Link */}
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Dhaka+Bangladesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 flex flex-col items-center justify-center gap-2 z-10 bg-base-100/40 group-hover:bg-transparent transition-colors duration-300"
+            >
+              <div className="bg-primary text-primary-content p-2 rounded-full shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                <FiMapPin size={18} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity bg-base-100 px-3 py-1 rounded-full shadow-sm">
+                Open in Maps
+              </span>
+            </a>
+
+            {/* Google Maps Embed Iframe */}
+            <iframe
+              title="Office Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.2721867803!2d90.38896175!3d23.74490335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbddd590d!2sDhaka!5e0!3m2!1sen!2sbd!4v1711234567890!5m2!1sen!2sbd"
+              className="w-full h-full grayscale contrast-125 opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <p className="mt-4 text-[10px] uppercase tracking-widest font-semibold opacity-50">
+            Click the map for directions
+          </p>
         </div>
 
         {/* COLUMN 4: OFFICE & SOCIAL */}
